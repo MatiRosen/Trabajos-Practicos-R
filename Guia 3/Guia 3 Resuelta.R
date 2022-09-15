@@ -1,4 +1,9 @@
-#Ej 1
+# Ejercicio 1
+# Escriba un programa – función cuya salida sea el elemento n-ésimo de la
+# sucesión de Fibonacci. La sucesión de Fibonacci tiene como sus dos primeros
+# elementos el 0 y el 1. Los restantes términos se calculan como la suma de los
+# dos anteriores.
+
 fibonacci <- function(n){
   suma = 0
   numAnteriorASuma = 0
@@ -18,15 +23,16 @@ fibonacci <- function(n){
 }
 fibonacci(10)
 
-#Ej 2
-Escriba un programa (función) que determine si un número entero positivo dado
-es par o impar. Recuerde que puede hacerlo comprobando si el número es
-divisible exactamente por 2. La salida deberá ser 1 si es par y 0 si no es par.
-Luego, utilizando ese programa como esclavo, escriba una nueva función que
-cuente los número pares e impares de una matriz de tamaño arbitrario que
-contiene elementos enteros positivos. La salida de este programa será una matriz
-cuyo primer elemento sea la cantidad de valores pares en A y el segundo
-elemento la cantidad de valores impares en A.
+#-------------------------------------------------------------------------------
+# Ejercicio 2
+# Escriba un programa (función) que determine si un número entero positivo dado
+# es par o impar. Recuerde que puede hacerlo comprobando si el número es
+# divisible exactamente por 2. La salida deberá ser 1 si es par y 0 si no es par.
+# Luego, utilizando ese programa como esclavo, escriba una nueva función que
+# cuente los número pares e impares de una matriz de tamaño arbitrario que
+# contiene elementos enteros positivos. La salida de este programa será una matriz
+# cuyo primer elemento sea la cantidad de valores pares en A y el segundo
+# elemento la cantidad de valores impares en A.
 
 esPar = function(x){
   if (x < 0 || x != round(x)){
@@ -63,7 +69,15 @@ matriz = matrix(round(runif(15)*100), 3); matriz
 
 contarPares(matriz)
 
-#Ej 3
+#-------------------------------------------------------------------------------
+# Ejercicio 3
+# Escriba un programa – función que reporte una aproximación del número pi
+# sumando “n” términos de la serie de Leibnitz.
+# 𝑗
+# ∑((-1)^n)/(2n+1) =𝜋/4
+#𝑛=0
+# Verificar que, al aumentar “n”, disminuye el error. 
+
 pi_leibnitz = function(n){
   suma = 0
   for (i in 1:n){
@@ -76,7 +90,16 @@ pi(100)
 pi(10000)
 pi(100000)
 
-#Ej 4
+#-------------------------------------------------------------------------------
+# Ejercicio 4
+# Escriba un programa (función) que calcule el número pi mediante simulación de
+# ‘lluvia’ al azar, usando n observaciones. El proceso es el siguiente: Se generan
+# puntos al azar (x, y) con x, y pertenecientes a [0, 1] y se verifica si pertenecen o
+# no al interior de un cuarto de círculo de radio uno (Es decir, se comprueba si
+# x^2 + y^2 < 1). La proporción de puntos en el interior del círculo converge en
+# probabilidad al área de ese cuarto de círculo a medida que se usan más puntos.
+# Nota: El área de un cuarto de círculo de radio 1 es A=pi/4.
+
 piLluvia = function(n){
   x = runif(n)
   y = runif(n)
@@ -92,8 +115,9 @@ piLluvia = function(n){
 
 piLluvia(100000)
 
-
-#Ej 5
+#-------------------------------------------------------------------------------
+# Ejercicio 5
+# Escriba una función en R que devuelva el mínimo elemento del vector x.
 obtenerMin = function(x){
   min = NULL
   for (i in 1:length(x)){
@@ -107,7 +131,10 @@ obtenerMin = function(x){
 v = round(runif(50, 1, 100)); v
 obtenerMin(v)
 
-#Ej 6
+#-------------------------------------------------------------------------------
+# Ejercicio 6
+# Escriba una función que, dado un vector, calcule la varianza, pudiendo indicar
+# como argumento de la función, si se busca una varianza muestral o poblacional. 
 calcularVar = function(x, t='P'){
   if (t=='P'){
     return(sum((x-mean(x))^2)/(length(x)))
@@ -121,7 +148,14 @@ calcularVar = function(x, t='P'){
 x=round(runif(5)*100) ; x
 calcularVar(x, 'M')
 
-#Ej 7
+#-------------------------------------------------------------------------------
+# Ejercicio 7
+# Escriba una función en R que se aplique sobre un escalar x que sea entero y
+# positivo y determine si x es primo o no. Un número primo es aquel que sólo es
+# divisible por 1 y por sí mismo. Para saberlo deberá dividir el número por todos
+# los otros entre 1 y x y ver si surge algún resto cero. Si el número es primo el
+# programa retorna un valor 1. Si no lo es retorna un valor 0.
+
 enteroYPositivo = function(x){
   return(x > 0 && x == round(x))
 }
@@ -147,7 +181,14 @@ esPrimo = function(x){
 
 esPrimo(13)
 
-#Ej 8
+#-------------------------------------------------------------------------------
+# Ejercicio 8
+# Escriba una función en R que aplique el programa anterior como esclavo para
+# determinar si los elementos de una matriz o vector y de enteros positivos son
+# primos. El programa deberá retornar un vector o matriz de igual dimensión que 
+# y, pero con 1s donde los elementos correspondientes de y son primos y 0s donde
+# los elementos de y son no primos.
+
 elementosPrimos = function(y){
   for (i in 1:length(y)){
     y[i] = esPrimo(y[i])
@@ -161,8 +202,11 @@ matriz = matrix(vector, 6) ; matriz
 elementosPrimos(vector)
 elementosPrimos(matriz)
 
+#-------------------------------------------------------------------------------
+# Ejercicio 9
+# Escriba un programa tipo función que genere una matriz A de dimensión m x n.
+# Dicha matriz deberá tener como elementos números primos entre 0 y 101.
 
-#Ej 9
 obtenerNumerosPrimosEntre = function(a, b){
   numeros = c()
   for (i in a:b){
@@ -184,7 +228,17 @@ generarMatrizElementosPrimos = function(m, n){
 
 generarMatrizElementosPrimos(2, 4)
 
-#Ej 10
+#-------------------------------------------------------------------------------
+# Ejercicio 10
+# Escriba una función en R tal que tome a un vector x como argumento de entrada
+# y devuelva un vector y cuyos elementos surgen de ordenar x de menor a mayor
+# mediante el siguiente procedimiento ("Método de la Burbuja" o “bubble sort”):
+# Se recorre todo el vector x comparando cada elemento con el anterior. Si están
+# en orden incorrecto se permutan y se continúa avanzando, comparando y si es
+# necesario, permutando. Una vez que se llega al final de x se vuelve a comenzar.
+# El proceso termina cuando, ante un recorrido completo en x no se realiza
+# ninguna permutación.
+
 metodoBurbuja = function(x){
   elementoAnterior = x[1]
   for (i in 1:length(x)){
@@ -224,8 +278,12 @@ ordenarVector = function(x){
 
 ordenarVector(c(9, 8, 2, 3, 5, 1, -2, 5, 4, 33, 6, 7 ,3 ,2))
 
+#-------------------------------------------------------------------------------
+# Ejercicio 11
+# Escriba una función similar a la anterior pero que admita un segundo argumento,
+# tal que si vale 0 ordena de menor a mayor, mientras que si vale 1 ordena de
+# mayor a menor.
 
-#Ej 11
 metodoBurbuja = function(x, o = 0){
   elementoAnterior = x[1]
   for (i in 1:length(x)){
@@ -256,8 +314,15 @@ ordenarVector = function(x, o = 0){
 
 ordenarVector(c(9, 8, 2, 3, 5, 1, -2, 5, 4, 33, 6, 7 ,3 ,2), 0)
 
+#-------------------------------------------------------------------------------
+# Ejercicio 12
+# Escriba un programa con formato de función que realice lo siguiente: Encontrar
+# el número más pequeño en una matriz dada y reportarlo, así como su posición en
+# la matriz. Si se repite, reportar todas las posiciones en que se encuentra. El input
+# deberá ser una matriz arbitraria de m*n y el output, el escalar correspondiente al
+# valor mínimo, así como el vector con la posición del número encontrado (todas
+# las posiciones, si hubiera más de una). 
 
-#Ej 12
 numMasPeque <- function(A){
   if (!is.matrix(A)){
     return("Se debe ingresar una matriz...")
@@ -274,8 +339,13 @@ numMasPeque <- function(A){
 
 numMasPeque(matrix(c(5, 3, 4, 3, 7, 8, 5, 6, 7, 6, 3, 4), 3, 4))
 
+#-------------------------------------------------------------------------------
+# Ejercicio 13
+# En una lista de números enteros consecutivos desde “a” hasta “b” encontrar
+# aquellos que son divisibles por “c”. Reportar un vector con los números que
+# cumplan la condición. Los argumentos deberán ser un vector y el escalar por el
+# cual se quiere dividir.
 
-#Ej 13
 encontrarDivisibles = function(x, a){
   v = c()
   for (i in 1:length(x)){
@@ -289,8 +359,11 @@ encontrarDivisibles = function(x, a){
 
 encontrarDivisibles(c(10:50), 7)
 
+#-------------------------------------------------------------------------------
+# Ejercicio 14
+# Dada una matriz dato genere otra que sea la imagen espejada de la original
+# respecto del eje vertical.
 
-#Ej 14
 invertirVector <- function(a){
   b = a[length(a)]
   for (i in 1:length(a)){
@@ -317,8 +390,12 @@ espejarMatriz = function(A){
 
 espejarMatriz(matrix(c(1:25), 5, 5))
 
-
-#Ej 15
+#-------------------------------------------------------------------------------
+# Ejercicio 15
+# Generar una función que, para cada elemento de una matriz de n*m, determine
+# si cada elemento es primo y/o par, y exprese los resultados en una sola matriz. Si
+# el número fuera primo, en la matriz de output se debería ver 1, si fuera entero, se
+# debería ver 1, y si fuera ambas, se debería ver el número 2. 
 enteroYPositivo = function(x){
   return(x > 0 && x == round(x))
 }
@@ -363,12 +440,13 @@ matrizEsPrimoOPar = function(A){
 
 matrizEsPrimoOPar(matrix(c(1:18), 3))
 
-#Ej 16
-Generar una función que, dado un escalar que indique el número de caras de un
-dado, itere tiradas hasta alcanzar una de las dos siguientes condiciones: el
-número de tiradas “n” (argumento de la función) o el valor “s” (argumento de la
-función) de la suma de las tiradas. Se recomienda usar la función sample.
-Recuerde que dos condiciones pueden incluirse utilizando el símbolo “&”. 
+#-------------------------------------------------------------------------------
+# Ejercicio 16
+# Generar una función que, dado un escalar que indique el número de caras de un
+# dado, itere tiradas hasta alcanzar una de las dos siguientes condiciones: el
+# número de tiradas “n” (argumento de la función) o el valor “s” (argumento de la
+# función) de la suma de las tiradas. Se recomienda usar la función sample.
+# Recuerde que dos condiciones pueden incluirse utilizando el símbolo “&”. 
 
 iterarDado <- function(x, n, s){
   dado <- 1:x
@@ -383,17 +461,3 @@ iterarDado <- function(x, n, s){
 
 
 iterarDado(10, 12, 54)
-
-
-
-
-
-
-
-
-
-
-
-
-
-

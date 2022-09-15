@@ -1,4 +1,4 @@
-#Ej 1
+#Ejercicio 1
 #Escribir un programa que recorra los elementos de un vector v y encuentre los
 #que son divisibles por un número dato x.
 #Reporte una copia del vector donde los elementos divisibles se reemplacen por "div".
@@ -23,6 +23,7 @@ numsDivisibles <- function(v, x){
 
 numsDivisibles(1:9, 3)
 
+#-------------------------------------------------------------------------------
 #Ej 2
 #Programe una función que detecte si un número entero positivo es o no un cuadrado
 #perfecto: cuadrado(x). Utilizando la función anterior como "esclavo" programe una
@@ -55,7 +56,8 @@ detecta = function(A){
 
 detecta(matrix(c(1:18), 3))
 
-#Ej 3
+#-------------------------------------------------------------------------------
+#Ejercicio 3
 #Dado un vector de números v (dato) eliminar los elementos repetidos generando un
 #nuevo vector w. con los elementos de este vector construir un nuevo vector u que
 #contenga todos los productos posibles formados por 2 elementos distintos de w.
@@ -101,9 +103,8 @@ prueba = c(1,2,5,3,5,5,3,6,7)
 eliminarRepetidos(prueba)
 productosPosibles(prueba)
 
-
-
-#Ej 4
+#-------------------------------------------------------------------------------
+#Ejercicio 4
 #Dada una matriz A de n x 2, donde cada fila representa las coordenadas (x , y) de un
 #punto en el plano. Determinar cuáles de dichos puntos se encuentran dentro de la zona
 #determinada por los ejes cartesianos y la recta y = a - b x , con a y b positivos dados
@@ -141,7 +142,8 @@ A = matrix(c(-1,2,3,16,5,6), ncol=2) ; A
 
 puntosEnZona(A, c(6, 9))
 
-#Ej 5
+#-------------------------------------------------------------------------------
+#Ejercicio 5
 #Dado un vector de números llamado "base" de enteros positivos, buscar en otro vector
 #v cualquiera de números enteros positivos la aparición de los elementos de "base".
 #Cada vez que aparezca un elemento en v que ya exista en "base", reemplazar dicho
@@ -185,7 +187,8 @@ base = c(2, 1, 4, 5)
 v =c(3, 4, 5, 6, 7, 9, 2, 3, 8, 5)
 buscarElementos(base, v)
 
-#Ej 6
+#-------------------------------------------------------------------------------
+#Ejercicio 6
 #Programe una función que reconozca si un número "x" es par o impar. Llamele par(x).
 #Con dicho programa como esclavo programe una función maestro llamado
 #"seleccion" que recorra un vector "v" #(dato) de enteros positivos y verifique si los
@@ -211,7 +214,8 @@ seleccion = function(v){
 v= c(7, 12, 4, 6, 8, 5, 9, 20)
 seleccion(v)
 
-#Ej 7
+#-------------------------------------------------------------------------------
+#Ejercicio 7
 #Escriba una función "mayor_que" que tenga como argumentos dos variables reales x
 #y a. si el número x es mayor que a el programa debe retornar un 1 (verdadero), sino
 #debe retornar un 0 (falso). Escriba un programa detecta que tenga como argumentos
@@ -239,8 +243,8 @@ detecta = function(v, h){
 
 detecta(c(1,3,2,4,6,8,7,6,5), 5)
 
-
-#Ej 8
+#-------------------------------------------------------------------------------
+#Ejercicio 8
 #Escriba un programa que detecte en un vector dato los números que llamaremos
 #"contiguos", que resultan del producto de dos enteros seguidos, por ejemplo 6 = 2*3 o
 #56 = 7*8. El reporte del programa será una matriz de n * 3 donde en la primera
@@ -276,7 +280,8 @@ detectar_contiguos <- function(dato){
 
 detectar_contiguos(c(1,2,3,4,5,6,56))
 
-#Ej9
+#-------------------------------------------------------------------------------
+#Ejercicio 9
 #Programar una función cuyo desempeño sea generar un vector con elementos enteros
 #positivos aleatorios entre 0 y 100, llamado "a", de longitud "n" (argumento). Con los
 #elementos de dicho vector "a" generar otro vector "b" cuyo primer elemento sea 1 y
@@ -314,8 +319,8 @@ generar_vector <- function(n){
 
 generar_vector(3)
 
-
-#Ej 10
+#-------------------------------------------------------------------------------
+#Ejercicio 10
 #Escriba una función "elementos" que tenga como argumentos una matriz cuadrada A
 #y un escalar positivo b. El programa debe crear una nueva matriz c que tenga en su
 #diagonal principal los valores de a multiplicados por b y fuera de su diagonal principal
@@ -338,7 +343,8 @@ elementos = function(A, b){
 
 elementos(matrix(c(1:9), 3), 5)
 
-#Ej 11
+#-------------------------------------------------------------------------------
+#Ejercicio 11
 #Generar un programa esclavo divisible(x,v) que deberá determinar si un número "x"es
 #divisible por alguno de los elementos de un vector dado "v". La salida será TRUE o 1
 #si es divisible y FALSE o 0 si no lo es. Con ese esclavo generar una función
@@ -372,8 +378,8 @@ Divisible = function(A){
 
 Divisible(matrix(seq(3, 27, 1), 5))
 
-
-#12
+#-------------------------------------------------------------------------------
+#Ejercicio 12
 #PARTE 1:
 #  La secuencia de Collatz de un número entero se construye de la siguiente forma:
 #  *Si el número es par, se lo divide por dos;
@@ -432,7 +438,8 @@ matriz_collatz = function(v){
 
 matriz_collatz(c(6, 11, 27))
 
-#Ej 13
+#-------------------------------------------------------------------------------
+#Ejercicio 13
 #Un tablero de ajedrez es una grilla de ocho filas y ocho columnas, numeradas de 1 a 8.
 #Dos de las piezas del juego de ajedrez son el alfil y la torre. El alfil se desplaza en
 #diagonal, mientras que la torre se desplaza horizontal o verticalmente. Una pieza
@@ -503,7 +510,8 @@ ajedrez <- function(torre, alfil){
 
 ajedrez(88,38)
 
-#Ej 14
+#-------------------------------------------------------------------------------
+#Ejercicio 14
 #Diseña un programa que, dados cinco puntos en el plano, determine cuál de los cuatro
 #últimos puntos es más cercano al primero. Un punto se representará con dos variables:
 #  una para la abcisa y otra para la ordenada. La distancia entre dos puntos (x1, y1) y
@@ -534,7 +542,8 @@ puntos_cercanos = function(a,b,c,d,e){
 
 puntos_cercanos(c(1,2), c(1,5), c(10,1), c(9,5), c(3, 6))
 
-#Ej 15
+#-------------------------------------------------------------------------------
+#Ejercicio 15
 #Sabiendo que en R existe un vector "letters" cuyos elementos son las letras del
 #abecedario, indique una función que, dado un vector de números enteros positivos
 #hasta el 26, "decodifique" el mensaje oculto, retornando un vector cuyos elementos
@@ -568,8 +577,8 @@ decodificar <- function(v){
 
 decodificar(c(13, 5, 12, 9, 20, 5, 1, 13, 15))
 
-
-#Ej 16
+#-------------------------------------------------------------------------------
+#Ejercicio 16
 #Una de las técnicas de criptografía más rudimentarias consiste en sustituir cada uno de
 #los caracteres por otro situado "n" posiciones más a la derecha. Si n = 2, por ejemplo,
 #sustituiremos la "a" por la "c", la "c" por la "e", y así sucesivamente. El problema que
@@ -605,7 +614,8 @@ criptografiar <- function(x, n){
 
 criptografiar(c("h", "o", "l", "v"), 4)
 
-#Ej 17
+#-------------------------------------------------------------------------------
+#Ejercicio 17
 #Define una función que devuelva el número de días que tiene un año determinado.
 #Ten en cuenta que un año es bisiesto si es divisible por 4 y no divisible por 100,
 #excepto si es también divisible por 400, en cuyo caso es bisiesto.
@@ -631,7 +641,8 @@ dias_año = function(año){
 
 dias_año(2000)
 
-#Ej 18
+#-------------------------------------------------------------------------------
+#Ejercicio 18
 #Diseña una función que, dada una lista de números enteros, devuelva el número de
 #"series" que hay en ella. Llamamos "serie" a todo tramo de la lista con valores
 #idénticos.
@@ -650,7 +661,8 @@ devolver_series <- function(v){
 
 devolver_series(c(1, 1, 8, 8, 8, 8, 0, 0, 0, 2, 10, 10, 1, 1, 0))
 
-#Ej 19
+#-------------------------------------------------------------------------------
+#Ejercicio 19
 #Primera Parte
 # Se desea verificar si el generador de números aleatorios de R funciona bien. Para
 # probarlo se debe escribir una función prob(n,k). La función debe generar con el
@@ -696,7 +708,8 @@ prob2 = function(n, gl, k){
 }
 prob2(100000,5,7)
 
-#Ej 20
+#-------------------------------------------------------------------------------
+#Ejercicio 20
 #Primera Parte
 # Se pide escribir una función "bin_to_int(b)" que transforme un número binario "b" (de
 # base 2) en un número entero.
@@ -751,8 +764,8 @@ int_to_bin = function(n){
 
 int_to_bin(109)
 
-
-#Ej 21
+#-------------------------------------------------------------------------------
+#Ejercicio 21
 # En el programa R, para eliminar un elemento se pone un signo menos en la posición
 # del elemento a eliminar. Por ejemplo v = [3 2 2 14] w = v[-c(3)] = [3 2 14]
 # Dado un vector de números enteros positivos v (dato) eliminar los elementos
@@ -784,7 +797,8 @@ eliminar_repetidos = function(v){
 v = c(3, 2, 2, 14, 3)
 eliminar_repetidos(v)
 
-#Ej 22
+#-------------------------------------------------------------------------------
+#Ejercicio 22
 # Escriba un programa "cercano" cuyo argumento sea una matriz de n filas y 2
 # columnas que representan coordenadas x e y en el plano cartesiano. El otro argumento
 # del programa será un par ordenado v representando las coordenadas de un punto en el
@@ -815,8 +829,8 @@ cercano <- function(A, v){
 M = matrix(c(1:16), ncol = 2) ; m
 cercano(M, c(3,3))
 
-
-#Ej 23
+#-------------------------------------------------------------------------------
+# Ejercicio 23
 # Escriba un programa "espejo" que genere a partir de una matriz cualquiera a otra
 # matriz cuyos elementos sean una imagen a espejo de la original. La imagen a espejo
 # será respecto de un eje vertical si el argumento eje = 1 y respecto de un eje horizontal
@@ -849,7 +863,8 @@ espejo <- function(A, eje=1){
 M = matrix(c(1:9), 3); M
 espejo(M, 2)
 
-#Ej 24
+#-------------------------------------------------------------------------------
+#Ejercicio 24
 # Escribir un programa "diagonales" que extraiga de una matriz A cuadrada cualquiera
 # los vectores formados por sus diagonales secundarias y por la contradiagonal. Si
 # encuentra un comando para hacerlo, no lo use.
@@ -870,7 +885,8 @@ diagonales = function(A){
 M = matrix(c(1:9), 3, byrow = TRUE); M
 diagonales(M) #Devuelve la contradiagonal porque no se que son las secundarias..
 
-#Ej 25
+#-------------------------------------------------------------------------------
+# Ejercicio 25
 # Escribir un programa "índices" que extraiga de una matriz todos los elementos que
 # tengan la suma de sus dos índices (de fila y columna) múltiplos de a. El reporte
 # deberá ser un vector indicando fila y columna para cada valor extraído.
@@ -894,7 +910,8 @@ indices = function(A, a){
 
 indices(M, 3)
 
-#Ej 26
+#-------------------------------------------------------------------------------
+# Ejercicio 26
 # Escribir un programa "intervalo" que tenga como argumento una matriz A de enteros
 # positivos de dimensión cualquiera. El programa deberá encontrar los elementos de la
 # matriz que son mayores e iguales que un número a y menores o iguales que un
@@ -919,7 +936,8 @@ intervalo = function(A, a, b){
 
 intervalo(M, 3, 8)
 
-#Ej 27
+#-------------------------------------------------------------------------------
+# Ejercicio 27
 # Primera Parte
 # Se pide escribir una función "multiplo(b,k)" que verifique si un número x y los
 # números que surgen del mismo son múltiplos de un número "k" dado (entero
